@@ -1,100 +1,34 @@
-/* GameSir G7 Pro 8K PC Royal2 Edition — Full Custom Skin */
+/* GameSir G7 Pro 8K PC Royal2 Edition — Stable Edit CSS */
 
-.custom {
-  position: relative;
-  width: 784px;
-  height: 558px;
-  background-color: #0b1022;
-  background-image:
+/* Add the galaxy background directly to the active controller editing wrapper */
+.controller.edit {
+  background-color: #0b1022 !important;
+  background-image: 
     radial-gradient(circle, #f3d4a2 0 1px, transparent 1.7px),
     radial-gradient(circle, #e7edff 0 1px, transparent 1.8px),
     radial-gradient(circle, #826dbb 0 1.4px, transparent 2.3px),
-    radial-gradient(ellipse at 47% 48%, transparent 16%, #0b1022 53%, transparent 76%);
-  background-size: 37px 31px, 53px 47px, 89px 71px, 100% 100%;
-  background-position: 4px 11px, 19px 4px, 12px 27px, 0 0;
-  border-radius: 45px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    radial-gradient(ellipse at 47% 48%, transparent 16%, #0b1022 53%, transparent 76%) !important;
+  background-size: 37px 31px, 53px 47px, 89px 71px, 100% 100% !important;
+  border-radius: 35px;
 }
 
-/* Controller Elements Base Container */
-.custom div {
-  position: absolute;
+/* Make sure active buttons glow gold on press */
+.controller.edit .pressed {
+  filter: sepia(.9) saturate(3) hue-rotate(345deg) brightness(1.5)
+    drop-shadow(0 0 8px #ffc662) !important;
 }
 
-/* Triggers & Bumpers Positioning */
-.custom .bumpers {
-  width: 516px;
-  height: 44px;
-  left: 134px;
-  top: 70px;
-}
-.custom .bumper {
-  width: 119px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-}
-.custom .bumper.pressed {
-  background: #ffc662;
-  box-shadow: 0 0 10px #ffc662;
-}
-
-/* D-Pad */
-.custom .dpad {
-  width: 130px;
-  height: 130px;
-  top: 310px;
-  left: 280px;
-}
-
-/* Face Buttons (ABXY) */
-.custom .abxy {
-  width: 160px;
-  height: 160px;
-  top: 250px;
-  left: 500px;
-}
-.custom .button {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.4);
-  border: 2px solid rgba(215, 173, 101, 0.5);
-}
-.custom .button.pressed {
-  background: #ffc662 !important;
-  box-shadow: 0 0 12px #ffc662;
-}
-
-/* Analog Sticks */
-.custom .sticks {
-  width: 380px;
-  height: 140px;
-  top: 330px;
-  left: 200px;
-}
-.custom .stick {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid #d7ad65;
-}
-.custom .stick.pressed {
-  box-shadow: 0 0 10px #ffc662;
-}
-
-/* Royal 2 Signature Branding Badge */
-.custom::after {
+/* Royal 2 Signature Badge */
+.controller.edit::after {
   content: '♛  R O Y A L 2';
   position: absolute;
-  z-index: 10;
+  z-index: 99;
   pointer-events: none;
   left: 50%;
-  bottom: 22%;
+  bottom: 24%;
   transform: translateX(-50%);
   color: #d7ad65;
-  font: 700 14px/1 Arial, sans-serif;
-  letter-spacing: 3px;
-  text-shadow: 0 1px 4px #120e17, 0 0 8px #c89043;
+  font: 700 13px/1 Arial, sans-serif;
+  letter-spacing: 2.5px;
+  text-shadow: 0 1px 4px #120e17, 0 0 6px #c89043;
 }
