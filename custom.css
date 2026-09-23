@@ -1,3 +1,63 @@
+/* GameSir G7 Pro 8K PC Royal2 Edition — Gamepad Viewer edit CSS.
+   Use with https://gamepadviewer.com/?p=1&s=1&editcss=YOUR_PUBLIC_CSS_URL
+   Xbox One base skin supplies the animated inputs. */
+
+/* Gamepad Viewer applies .edit to the selected controller for editcss=. */
+.controller.edit {
+  isolation: isolate;
+  filter: saturate(.66) contrast(1.13);
+}
+
+/* Galaxy faceplate. The mask follows the Xbox One controller body at 784 x 558.
+   This overlay is visual only; it never blocks controller input elements. */
+.controller.edit::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle, #f3d4a2 0 1px, transparent 1.7px),
+    radial-gradient(circle, #e7edff 0 1px, transparent 1.8px),
+    radial-gradient(circle, #826dbb 0 1.4px, transparent 2.3px),
+    radial-gradient(ellipse at 47% 48%, transparent 16%, #0b1022 53%, transparent 76%);
+  background-size: 37px 31px, 53px 47px, 89px 71px, 100% 100%;
+  background-position: 4px 11px, 19px 4px, 12px 27px, 0 0;
+  opacity: .76;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 784 558'%3E%3Cpath fill='white' d='M118 116 Q145 82 230 88 L292 94 Q392 62 492 94 L554 88 Q639 82 666 116 Q716 150 741 249 L776 429 Q782 510 727 537 Q679 557 628 505 L533 389 Q476 365 392 372 Q308 365 251 389 L156 505 Q105 557 57 537 Q2 510 8 429 L43 249 Q68 150 118 116Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 784 558'%3E%3Cpath fill='white' d='M118 116 Q145 82 230 88 L292 94 Q392 62 492 94 L554 88 Q639 82 666 116 Q716 150 741 249 L776 429 Q782 510 727 537 Q679 557 628 505 L533 389 Q476 365 392 372 Q308 365 251 389 L156 505 Q105 557 57 537 Q2 510 8 429 L43 249 Q68 150 118 116Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Keep the active controls above the faceplate. */
+.controller.edit .button,
+.controller.edit .stick,
+.controller.edit .dpad,
+.controller.edit .bumper,
+.controller.edit .trigger,
+.controller.edit .back,
+.controller.edit .start {
+  filter: grayscale(.82) contrast(1.2);
+}
+.controller.edit .pressed {
+  filter: sepia(.8) saturate(2.8) hue-rotate(345deg) brightness(1.4)
+    drop-shadow(0 0 7px #ffc662);
+}
+
+/* Gold crown / signature accents outside the moving elements. */
+.controller.edit::before {
+  content: '♛  R O Y A L 2';
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  left: 43%;
+  top: 65%;
+  color: #d7ad65;
+  font: 700 12px/1 Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 3px #120e17, 0 0 5px #c89043;
+}
 /* GameSir G7 Pro 8K PC Royal2 Edition — Galaxy Controller Body */
 
 /* Target the controller's background image layer and tint it with your galaxy texture */
