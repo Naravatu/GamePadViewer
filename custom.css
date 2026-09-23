@@ -1,4 +1,63 @@
-/* GameSir G7 Pro 8K PC Royal2 Edition — Gamepad Viewer edit CSS.
+/* GameSir G7 Pro 8K PC Royal2 Edition — Fixed Controller Shell */
+
+/* Force the controller wrapper to display the correct dimensions and your galaxy background */
+.controller.edit {
+  position: relative;
+  width: 784px !important;
+  height: 558px !important;
+  background-color: #0b1022 !important;
+  background-image: 
+    radial-gradient(circle, #f3d4a2 0 1px, transparent 1.7px),
+    radial-gradient(circle, #e7edff 0 1px, transparent 1.8px),
+    radial-gradient(circle, #826dbb 0 1.4px, transparent 2.3px),
+    radial-gradient(ellipse at 47% 48%, transparent 16%, #0b1022 53%, transparent 76%) !important;
+  background-size: 37px 31px, 53px 47px, 89px 71px, 100% 100% !important;
+  border-radius: 45px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Re-inject the controller body mask so it renders the Xbox shape instead of a square box */
+.controller.edit .background {
+  display: block !important;
+  background-image: url('https://gamepadviewer.com/s/xboxone/xboxone.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  opacity: 0.85;
+  mix-blend-mode: overlay;
+}
+
+/* Keep sticks, dpad, and buttons crisp */
+.controller.edit .button,
+.controller.edit .stick,
+.controller.edit .dpad,
+.controller.edit .bumper,
+.controller.edit .back,
+.controller.edit .start,
+.controller.edit .trigger {
+  filter: contrast(1.1) brightness(1.05);
+}
+
+/* Pressed gold glow effect */
+.controller.edit .pressed {
+  filter: sepia(.9) saturate(3) hue-rotate(345deg) brightness(1.5)
+    drop-shadow(0 0 8px #ffc662) !important;
+}
+
+/* Royal 2 Signature Badge */
+.controller.edit::after {
+  content: '♛  R O Y A L 2';
+  position: absolute;
+  z-index: 99;
+  pointer-events: none;
+  left: 50%;
+  bottom: 22%;
+  transform: translateX(-50%);
+  color: #d7ad65;
+  font: 700 14px/1 Arial, sans-serif;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 4px #120e17, 0 0 8px #c89043;
+}/* GameSir G7 Pro 8K PC Royal2 Edition — Gamepad Viewer edit CSS.
    Use with https://gamepadviewer.com/?p=1&s=1&editcss=YOUR_PUBLIC_CSS_URL
    Xbox One base skin supplies the animated inputs. */
 
