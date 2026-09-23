@@ -1,7 +1,9 @@
-/* GameSir G7 Pro 8K PC Royal2 Edition — Stable Edit CSS */
+/* GameSir G7 Pro 8K PC Royal2 Edition — Fixed Dimensions */
 
-/* Add the galaxy background directly to the active controller editing wrapper */
 .controller.edit {
+  position: relative;
+  width: 450px !important;
+  height: 300px !important;
   background-color: #0b1022 !important;
   background-image: 
     radial-gradient(circle, #f3d4a2 0 1px, transparent 1.7px),
@@ -9,10 +11,17 @@
     radial-gradient(circle, #826dbb 0 1.4px, transparent 2.3px),
     radial-gradient(ellipse at 47% 48%, transparent 16%, #0b1022 53%, transparent 76%) !important;
   background-size: 37px 31px, 53px 47px, 89px 71px, 100% 100% !important;
-  border-radius: 35px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Make sure active buttons glow gold on press */
+/* Fix spacing for inner components so they align nicely */
+.controller.edit .inner {
+  transform: scale(0.85);
+  transform-origin: center;
+}
+
+/* Make pressed buttons pop with gold glow */
 .controller.edit .pressed {
   filter: sepia(.9) saturate(3) hue-rotate(345deg) brightness(1.5)
     drop-shadow(0 0 8px #ffc662) !important;
@@ -25,10 +34,10 @@
   z-index: 99;
   pointer-events: none;
   left: 50%;
-  bottom: 24%;
+  bottom: 15%;
   transform: translateX(-50%);
   color: #d7ad65;
-  font: 700 13px/1 Arial, sans-serif;
-  letter-spacing: 2.5px;
-  text-shadow: 0 1px 4px #120e17, 0 0 6px #c89043;
+  font: 700 12px/1 Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 3px #120e17, 0 0 5px #c89043;
 }
